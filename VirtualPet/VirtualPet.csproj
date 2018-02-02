@@ -42,9 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CletusCamel.cs" />
-    <Compile Include="LarryLion.cs" />
-    <Compile Include="MelvinMonkey.cs" />
+    <Compile Include="MyPet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
