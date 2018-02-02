@@ -29,18 +29,90 @@ namespace VirtualPet
                         firstName = "Larry";
                         Console.WriteLine("\a\aYou picked Larry the Lion! He's a wild beast... and I ain't lion...");
                         Console.WriteLine("");
+                        Console.Title = "ASCII Art";
+                        string title = @"
+       ,  ,, ,
+           , ,; ; ;;  ; ;  ;
+        , ; ';  ;  ;; .-''\ ; ;
+     , ;  ;`  ; ,; . / /8b \ ; ;
+     `; ; .;'         ;,\8 |  ;  ;
+      ` ;/   / `_      ; ;;    ;  ; ;
+         |/.'  /9)    ;  ; `    ;  ; ;
+        ,/'          ; ; ;  ;   ; ; ; ;
+       /_            ;    ;  `    ;  ;
+      `?8P.      ; ; ; ; ; ; ; ;
+      | ;  .:: `     ; ; ; ;   `  ; ;
+      `' `--._      ;;  ;;  ; ;   ;   ;
+       `-..__..--''; ; ; ; ; ; ;
+                        ; ; ; ; ; ;
+
+
+                        ";
+
+                        Console.WriteLine(title);
                         break;
                     case 2:
                         petName = "Melvin the Monkey";
                         firstName = "Melvin";
                         Console.WriteLine("\a\aYou picked Melvin the Monkey! You're bananas!");
                         Console.WriteLine("");
+                        Console.Title = "ASCII Art";
+                        title = @"
+                      __------__
+                    /~          ~\
+                   |    //^\\//^\|            
+                 /~~\  ||  o| |o|:~\      
+                | |6   ||___|_|_||:|     
+                 \__.  /      o  \/'     Please give me more  
+                  |   (       O   )    /     BANANAS!!
+         /~~~~\    `\  \         /
+        | |~~\ |     )  ~------~`\
+       /' |  | |   /     ____ /~~~)\
+      (_/'   | | |     /'    |    ( |
+             | | |     \    /   __)/ \
+             \  \ \      \/    /' \   `\
+               \  \|\        /   | |\___|
+                 \ |  \____/     | |
+                 /^~>  \        _/ <
+                |  |         \       \
+                |  | \        \        \
+                -^-\  \       |        )
+                     `\_______/^\______/
+
+
+                        ";
+                        Console.WriteLine(title); 
                         break;
                     case 3:
                         petName = "Cletus the Camel";
                         firstName = "Cletus";
                         Console.WriteLine("You picked Cletus the Camel! Don't ever dessert him.");
                         Console.WriteLine("");
+                        Console.Title = "ASCII Art";
+                        title = @"
+
+                    ,.                         
+           .           :%%%.    .%%%.             
+       __%%%(\        `%%%%%   .%%%%%             
+     /a  ^  '%        %%%% %: ,%  %%`            
+    '__..  ,' %     .-%:     % -'    %              
+     ~~ %:. `     % '          .   `.            
+          %% % `   %%           .%:  . \.          
+          %%:. `-'   `        .%% . %: :\         
+          % (%,%...   `%,     %%'   %% ) )       
+            %)%%)%% '   )%%%.....- '    / (         
+             % a:f %%\ % / \`%  %%% `   / \))        
+            %(%'  % /-. \      '  \ |-. '.       
+            `'    |%   `()         \|  `()       
+                  ||    /          ()   /        
+                  ()   0            |  o          
+                   \  /\ AF         o /           
+                   o  `            /-|            
+                ,-/ `           ,-/
+
+
+";
+                        Console.WriteLine(title);
                         break;
                     default:
                         Console.WriteLine("\a\aYou stink at following directions. Please try again. \nThe program will now close.");

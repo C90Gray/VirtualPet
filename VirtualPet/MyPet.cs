@@ -92,6 +92,23 @@ namespace VirtualPet
             {
                 IsHungry = false;
                 hungerLevel -= 10;
+                Console.Title = "ASCII Art";
+               string title = @"
+                          
+                             _
+                            /  \
+          _..--""""--.._      \_ /
+         /,_..------ -.._\   ||
+         |               |   ||
+         |  `'''-----'''`|   ||
+         \               /  /  \
+          '.           .'   |  |
+            '--.....--'     \_ /
+
+
+
+";
+                Console.WriteLine(title);
                 return " has been fed. \n";
             }
             else
@@ -108,6 +125,30 @@ namespace VirtualPet
                 isThirsty = false;
                 hasToPotty = true;
                 thirstLevel = 0;
+                Console.Title = "ASCII Art";
+                string title = @"
+
+                        //
+                       //
+                      //
+                     //
+              _______||
+         ,-'''       ||`-.
+        (            ||   )
+        |`-..._______,..-'|
+        |            ||   |
+        |     _______||   |
+        |,-'''_ _  ~ ||`-.|
+        |  ~ / `-.\ ,-'\ ~|
+        |`-...___/___,..-'|
+        |    `-./-'_ \/_| |
+        | -'  ~~     || -.|
+        (   ~      ~   ~~ )
+         `-..._______,..-'
+
+
+";
+                Console.WriteLine(title);
                 return "'s thirst was quenched. \n";
             }
             else
@@ -118,6 +159,33 @@ namespace VirtualPet
 
         public void Play()
         {
+            Console.Title = "ASCII Art";
+            string title = @"
+
+
+                      ..ee$$$$$ee..                              
+                   .e$*      $      *$e.                
+                 z$'*.       $         $$c                        
+               z$'   *.      $       .P  ^$c                      
+              d'      *      $      z'     'b                     
+             $'        b     $     4%       ^$                    
+            d%         *     $     P         '$                   
+           .$          'F    $    J'          $r                  
+           4L...........b....$....$...........J$                  
+           $F           F    $    $           4$                  
+           4F          4F    $    4r          4P                  
+           ^$          $     $     b          $%                  
+            3L        .F     $     'r        JP                   
+             *c       $      $      3.      z$                    
+              *b     J'      $       3r    dP                     
+               ^$c  z%       $        'c z$'                      
+                 '*$L        $        .d$''                        
+                    '*$ee..  $  ..ze$P'                    
+                        ""*******""                  
+
+
+";
+            Console.WriteLine(title);
             bordomLevel -= 25;
             hungerLevel += 15;
             thirstLevel += 25;
@@ -128,6 +196,23 @@ namespace VirtualPet
             if (tiredness > 25)
             {
                 Console.WriteLine("Zzzzzzzzzzzz");
+                Console.Title = "ASCII Art";
+                string title = @"
+
+
+        ||
+        ||                   ||
+     ||/||___                ||
+     || /`   )____________||_/|
+     ||/___ //_/_/_/_/_/_/||/ |
+     ||(___)/_/_/_/_/_/_/_||  |
+     ||     |_|_|_|_|_|_|_|| /|
+     ||     | | | | | | | ||/||
+     ||~~~~~~~~~~~~~~~~~~~||
+     ||                   ||
+
+";
+                Console.WriteLine(title);
                 bordomLevel += 10;
                 hungerLevel += 20;
                 thirstLevel += 10;
@@ -141,6 +226,16 @@ namespace VirtualPet
 
         public void Potty()
         {
+            Console.Title = "ASCII Art";
+            string title = @"
+    (   )
+  (   ) (
+   ) _   )
+    ( \_
+  _(_\ \)__
+ (____\___))
+";
+            Console.WriteLine(title);
             hungerLevel += 15;
             thirstLevel += 10;
         }
