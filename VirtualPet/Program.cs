@@ -27,13 +27,13 @@ namespace VirtualPet
                     case 1:
                         petName = "Larry the Lion";
                         firstName = "Larry";
-                        Console.WriteLine("You picked Larry the Lion! He's a wild beast... and I ain't lion...");
+                        Console.WriteLine("\a\aYou picked Larry the Lion! He's a wild beast... and I ain't lion...");
                         Console.WriteLine("");
                         break;
                     case 2:
                         petName = "Melvin the Monkey";
                         firstName = "Melvin";
-                        Console.WriteLine("You picked Melvin the Monkey! You're bananas!");
+                        Console.WriteLine("\a\aYou picked Melvin the Monkey! You're bananas!");
                         Console.WriteLine("");
                         break;
                     case 3:
@@ -43,17 +43,22 @@ namespace VirtualPet
                         Console.WriteLine("");
                         break;
                     default:
-                        Console.WriteLine("You stink at following directions. Please try again. \nThe program will now close.");
+                        Console.WriteLine("\a\aYou stink at following directions. Please try again. \nThe program will now close.");
                         return;
 
                 }
 
 
 
-                MyPet petMe = new MyPet(70, 65, 10, 5);               
+                MyPet petMe = new MyPet(70, 65, 30, 25);               
 
                 do
                 {
+                    Console.WriteLine("Press any key to see " + firstName + "'s current state.");
+                    Console.ReadLine();
+                    petMe.Tick();
+                    Console.ReadLine();
+                    Console.WriteLine("");
                     Console.WriteLine("What would you like to do with " + petName + " ?\nPlease enter a number from the following list.\n\n");
                     Console.WriteLine("1: Feed " + firstName);
                     Console.WriteLine("2: Give " + firstName + " water");
@@ -65,8 +70,42 @@ namespace VirtualPet
                     Console.WriteLine("0: Pick a new pet and restart the game");
                     action = int.Parse(Console.ReadLine());
 
+                    switch (action)
+                    {
+                        case 1:
+                            Console.WriteLine(firstName + petMe.Eat());
+                            Console.WriteLine("");
+                            break;
+
+                        case 2:
+                            Console.WriteLine(firstName + petMe.Drink());
+                            Console.WriteLine("");
+                            break;
+
+                        case 3:
+                            Console.WriteLine(firstName + " loves playing with you!");
+                            petMe.Play();
+                            break;
+
+                        case 4:
+                            petMe.Sleep();
+                            break;
+
+                        case 5:
+                            Console.WriteLine("That smells...");
+                            petMe.Potty();
+                            break;
+
+                        case 6:
+                            break;
+
+                    }
+
                 } while ((action != 7) && (action != 0 ));
             } while (action == 0);
+
+            Console.WriteLine("Thank you for taking care of My Virtual Pet, " + petName + ". \nPlease come back soon! " +firstName + " and his friends will miss you.");
+
 
 
         }

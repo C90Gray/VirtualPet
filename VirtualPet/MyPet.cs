@@ -86,18 +86,18 @@ namespace VirtualPet
             this.bordomLevel = bordomLevel;
         }
 
-        public string FeedMe()
+        public string Eat()
         {
             if (hungerLevel > 50)
             {
                 IsHungry = false;
                 hungerLevel -= 10;
-                return "has been fed. \n";
+                return " has been fed. \n";
             }
             else
             {
                 hasToPotty = true;
-                return "isn't hungry. \n";
+                return " isn't hungry. \n";
             }
         }
 
@@ -112,7 +112,7 @@ namespace VirtualPet
             }
             else
             {
-                return "isn't thirsty right now.";
+                return " isn't thirsty right now. \n";
             }
         }
 
@@ -127,6 +127,7 @@ namespace VirtualPet
         {
             if (tiredness > 25)
             {
+                Console.WriteLine("Zzzzzzzzzzzz");
                 bordomLevel += 10;
                 hungerLevel += 20;
                 thirstLevel += 10;
@@ -134,7 +135,7 @@ namespace VirtualPet
             }
             else
             {
-                Console.WriteLine("He isn't tired right now");
+                Console.WriteLine("He isn't tired right now \n");
             }
         }
 
@@ -150,51 +151,72 @@ namespace VirtualPet
 
             hungerLevel = hungerLevel + r.Next(-10, 10);
             thirstLevel = thirstLevel + r.Next(-3, 3);
-            tiredness = tiredness + r.Next(-30, 30);
-            bordomLevel = bordomLevel = r.Next(-15, 15);
-            if (hungerLevel > 50)
+            tiredness = tiredness + r.Next(-5, 5);
+            bordomLevel = bordomLevel = r.Next(-6, 6);
+            if ((hungerLevel >= 50) && (hungerLevel <= 100))
             {
                 isHungry = true;
             }
-            else
+            else if ((hungerLevel < 50) && (hungerLevel >= 0))
             {
                 isHungry = false;
-                hasToPotty = true
+                hasToPotty = true;
+            }
+            else
+            {
+                hungerLevel = 50;
+                isHungry = true;
             }
 
-            if (thirstLevel > 50)
+            if ((thirstLevel >= 50) && (thirstLevel <= 100))
             {
                 isThirsty = true;
             }
-            else
+            else if ((thirstLevel < 50) && (thirstLevel >= 0))
             {
                 isThirsty = false;
                 hasToPotty = true;
             }
+            else
+            {
+                thirstLevel = 49;
+                isThirsty = false;
+            }
 
-            if (bordomLevel > 50)
+            if ((bordomLevel >= 50) && (bordomLevel <= 100))
             {
                 isBored = true;
             }
-            else
+            else if ((bordomLevel < 50) && (bordomLevel >= 100))
             {
                 isBored = false;
             }
+            else
+            {
+                bordomLevel = 40;
+                isBored = false;
+            }
 
-            if (tiredness > 50)
+            if ((tiredness >= 50) && (tiredness <= 100))
             {
                 isTired = true;
+            } 
+            else if ((tiredness < 50) && (tiredness >= 0))
+            {
+                isTired = false;
             }
             else
             {
-                isTired = false;
+                tiredness = 30;
+                IsTired = false;
             }
 
             Console.WriteLine("It is " + isHungry + " that your pet is hungry. \nHunger Level: " + hungerLevel);
             Console.WriteLine("It is " + IsThirsty + " that your pet is thirsty. \nThirst Level: " + thirstLevel);
             Console.WriteLine("It is " + isTired + " that your pet is tired. \nTiredness: " + tiredness);
             Console.WriteLine("It is " + isBored + " that your pet is bored. \nBordom Level: " + bordomLevel);
-            Console.WriteLine("It is " + hasToPotty + " that your pet has to go potty.");
+            Console.WriteLine("It is " + hasToPotty + " that your pet has to go potty. \n");
+            Console.WriteLine("Press any key to continue");
         }
     }
 }
