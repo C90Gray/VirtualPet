@@ -198,7 +198,7 @@ namespace VirtualPet
 
         public void Sleep()
         {
-            if (tiredness > 25)
+            if (tiredness > 50)
             {
                 Console.WriteLine("Zzzzzzzzzzzz");
                 Console.Title = "ASCII Art";
