@@ -10,9 +10,12 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
+            //global variables
             int action = 0;
             string petName = "";
             string firstName = "";
+
+            //first do while is a menu that allows you to choose your pet
             do
             {
                 Console.WriteLine("Welcome to Virtual Pet! \n\nTo begin you will choose a pet.");
@@ -121,9 +124,10 @@ namespace VirtualPet
                 }
 
 
-
+                //creating pet object outside of the main do while loop
                 MyPet petMe = new MyPet(70, 65, 30, 25);               
 
+                //main do while loop loops the main menu and the tick method
                 do
                 {
                     Console.WriteLine("Press any key to see " + firstName + "'s current state.");
@@ -176,6 +180,7 @@ namespace VirtualPet
                 } while ((action != 7) && (action != 0 ));
             } while (action == 0);
 
+            //program thanks the user for using once the user decides to quit
             Console.WriteLine("Thank you for taking care of My Virtual Pet, " + petName + ". \nPlease come back soon! " +firstName + " and his friends will miss you.");
 
 

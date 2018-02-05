@@ -8,6 +8,8 @@ namespace VirtualPet
 {
     class MyPet
     {
+
+        //fields
         private bool isHungry;
         private int hungerLevel;
         private bool isThirsty;
@@ -18,6 +20,7 @@ namespace VirtualPet
         private int bordomLevel;
         private bool hasToPotty;
 
+        //properties
         public bool IsHungry
         {
             get { return this.isHungry; }
@@ -72,6 +75,7 @@ namespace VirtualPet
             set { this.hasToPotty = value; }
         }
 
+        //constructors
         public MyPet()
         {
 
@@ -86,6 +90,7 @@ namespace VirtualPet
             this.bordomLevel = bordomLevel;
         }
 
+        //methods
         public string Eat()
         {
             if (hungerLevel > 50)
@@ -240,14 +245,18 @@ namespace VirtualPet
             thirstLevel += 10;
         }
 
+        //tick method
         public void Tick()
         {
+            //created random class to allow fluctuation in fields
             Random r = new Random();
 
             hungerLevel = hungerLevel + r.Next(-10, 10);
             thirstLevel = thirstLevel + r.Next(-3, 3);
             tiredness = tiredness + r.Next(-5, 5);
             bordomLevel = bordomLevel = r.Next(-6, 6);
+            
+            //These extensive if statements make sure that the levels (since they are randomly fluctuating) stay within the range of 0 - 100
             if ((hungerLevel >= 50) && (hungerLevel <= 100))
             {
                 isHungry = true;
@@ -306,6 +315,7 @@ namespace VirtualPet
                 IsTired = false;
             }
 
+            //finally, after all the numbers are set, this is sent to the console.
             Console.WriteLine("It is " + isHungry + " that your pet is hungry. \nHunger Level: " + hungerLevel);
             Console.WriteLine("It is " + IsThirsty + " that your pet is thirsty. \nThirst Level: " + thirstLevel);
             Console.WriteLine("It is " + isTired + " that your pet is tired. \nTiredness: " + tiredness);
